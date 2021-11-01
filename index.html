@@ -20,62 +20,43 @@
 
 
     <!-- Div Elements for forecast -->
-    <main class="row row-cols-2">
+    <main class="row row-cols-2 no-gutters">
         <!-- Search Button -->
-        <section class-=search class="col-4">
-            <div>
-                <h3>Search for a City, State</h3>
-            </div>
-            <div>
-                <input type="text" id="city"/>
-            </div>
-            <div>
-                <button id="submit">Search</button> 
+        <section class="col-3">
+            <div id="searchContent" class="card">
+                <div>
+                    <h3 class="card-header">Search for a City:</h3>
+                </div>
+                <div id=searchContentBody class="card-body">
+                    <input type="text" id="city" autofocus="true" class="form-input"/>
+                    <p><button id="submit" class="btn">Search</button></p>
+                    <p><button id="clear" class="btn">Clear Recent Cities</button></p>
+                </div>
+                
             </div>  
         </section>
 
-        <section class="col-8">
-            <div id=currentInfo>
-                <h3 id=cityName></h3>
-                <p id="currentDate"></p>
-                <p id="currentTemp"></p><img/>
-                <p id="currentWind"></p>
-                <p id="currentHumidity"></p>
-                <p id="uvIndex"></p>
-            </div>
-
-            <div id=fiveDayInfo>
-                <h5 id="fiveDayForecast"></h5>
-                <div id=futureDay>
-                    <div id="futureTemp"></div>
-                    <div id="futureWind"></div>
-                    <div id="futureHumidity"></div>
+        <section id=weather class="col-9">
+            <div id=currentInfo class="card">
+                <h3 id=cityName class="card-header"></h3>
+                <div class="card-body">
+                    <p id="currentDate"></p>
+                    <img/>
+                    <p id="currentTemp"></p>
+                    <p id="currentWind"></p>
+                    <p id="currentHumidity"></p>
+                    <p id="uvIndex"></p>
                 </div>
             </div>
-        </section>
+            <br/>
+        
+            <h5 id="fiveDayForecast"></h5>
+            <br/>
+            <section id=fiveDayInfo class="card">
 
-            <!-- <div id=futureDay2>
-                <p id="futureTemp2"></p>
-                <p id="futureWind2"></p>
-                <p id="futureHumidity2"></p>
-            </div>
-            <div id=futureDay3>
-                <p id="futureTemp3"></p>
-                <p id="futureWind3"></p>
-                <p id="futureHumidity3"></p>
-            </div>
-            <div id=futureDay4>
-                <p id="futureTemp4"></p>
-                <p id="futureWind4"></p>
-                <p id="futureHumidity4"></p>
-            </div>
-            <div id=futureDay5>
-                <p id="futureTemp5"></p>
-                <p id="futureWind5"></p>
-                <p id="futureHumidity5"></p>
-            </div>    
-        </div> -->
-    
+            </section>
+
+        </section>
     </main>
 
     
