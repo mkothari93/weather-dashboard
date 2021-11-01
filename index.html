@@ -12,12 +12,12 @@
     
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <!-- Header: Weather Dashboard w/ ombre colors -->
     <header>
         <h1 class="text-white">Weather Dashboard</h1>
     </header>
-
 
     <!-- Div Elements for forecast -->
     <main class="row row-cols-2 no-gutters">
@@ -32,11 +32,13 @@
                     <p><button id="submit" class="btn">Search</button></p>
                     <p><button id="clear" class="btn">Clear Recent Cities</button></p>
                 </div>
-                
             </div>  
         </section>
 
+        <!-- Weather Forecast -->
         <section id=weather class="col-9">
+
+            <!-- Current Weather Forecast -->
             <div id=currentInfo class="card">
                 <h3 id=cityName class="card-header"></h3>
                 <div class="card-body">
@@ -49,24 +51,17 @@
                 </div>
             </div>
             <br/>
-        
+            
+            <!-- Future Weather Forecast (dynamically created)-->
             <h5 id="fiveDayForecast"></h5>
             <br/>
             <section id=fiveDayInfo class="card">
-
             </section>
 
         </section>
     </main>
 
-    
-
-
-
-
-
-
-
+    <!-- Links for all Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
