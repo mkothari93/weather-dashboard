@@ -13,7 +13,7 @@ $("#submit").click(function(){
     var lat = result.data[0].latitude;
     var currCity = result.data[0].name;
     var currState = result.data[0].region_code;
-    var currDate = moment().format('L')
+    var currDate = moment().format('L');
 
     $("#cityName").append(currCity + ", " + currState + "  (" + currDate + ")");
 
@@ -30,7 +30,8 @@ $("#submit").click(function(){
     var currWind = resultWeather.current.wind_speed;
     var currHumid = resultWeather.current.humidity;
     var currUV = resultWeather.current.uvi;
-
+    
+    $("#currentInfo").addClass("currentInfo");
     $("#currentInfo").css({"border-width": "1px", "border-style": "solid", "border-color": "rgba(0,0,0,.125)"});
     $("img").css({"width": "50px", "height": "auto"});
     $("img").attr("src", " http://openweathermap.org/img/wn/" + currTempIcon + "@2x.png")

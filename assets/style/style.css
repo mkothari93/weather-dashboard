@@ -71,6 +71,12 @@ main {
     border: none;
 }
 
+.currentInfo {
+    background-color: #ba9ce7;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .date {
     font-size: 20px;
     font-weight: bold;
@@ -80,7 +86,7 @@ main {
 }
 
 .forecastContent {
-    text-align: center;
+    text-align: left;
     font-weight: bold;
 }
 
