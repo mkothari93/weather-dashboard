@@ -10,10 +10,10 @@ The purpose of this project is to create a daily planner for standard business h
 * jQuery
 * BootStrap
 * Moment.js
-* OpenWeather APIs
+* OpenWeather API
 
 ### Website
-
+https://mkothari93.github.io/weather-dashboard/
 
 ### Image of Website
 ![Blank Weather Dashboard](https://user-images.githubusercontent.com/90233589/140665325-0b1a9551-d98d-4124-89f2-34f52b9e9a79.JPG)
