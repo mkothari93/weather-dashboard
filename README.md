@@ -1,7 +1,7 @@
 # Weather Dashboard
 
 ### Purpose
-The purpose of this project is to create a daily planner for standard business hours. A user can add items to the daily planner and it will save the items in local storage.
+The purpose of this project is to create a Weather Dashboard taking user input of a city name. Once searched, the page displays the name of city searched, the state in which the city is located, the current date, and the current weather. The current weather consists of the tempature, wind speed, humidity, and uv index. In addition, the page displays the five day forecast for the city searched.
 
 ### Built With
 * HTML
