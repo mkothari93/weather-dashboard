@@ -45,7 +45,7 @@ var getWeather = function () {
   $("#citiesSearched").append("<p><button class='btn'>" + city + "</button></p>");
   ;
   //API for obtaining longitude and latitude from city provided by user
-  fetch("http://api.positionstack.com/v1/forward?query=" + city + "&access_key=4e1af31119a12431a87582be15b02d15")
+  fetch("https://api.positionstack.com/v1/forward?query=" + city + "&access_key=4e1af31119a12431a87582be15b02d15")
     .then(function (response) { return response.json() })
     .then(function (result) {
 
