@@ -64,7 +64,7 @@ var getWeather = function () {
       $("#cityName").append(currCity + ", " + currState + "  (" + currDate + ")");
 
       //API for obtaining weather by using the latitude and longitude from variables above
-      fetch("http://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=imperial&appid=66234c6444c4ec62b6a55ecddd9501b0")
+      fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=imperial&appid=66234c6444c4ec62b6a55ecddd9501b0")
         .then(function (responseWeather) {
           return responseWeather.json();
         })
@@ -81,7 +81,7 @@ var getWeather = function () {
           $("#currentInfo").addClass("currentInfo");
           $("#currentInfo").css({ "border-width": "1px", "border-style": "solid", "border-color": "rgba(0,0,0,.125)" });
           $("img").css({ "width": "50px", "height": "auto" });
-          $("img").attr("src", " http://openweathermap.org/img/wn/" + currTempIcon + "@2x.png")
+          $("img").attr("src", " https://openweathermap.org/img/wn/" + currTempIcon + "@2x.png")
           $("#currentTemp").append("Temperature: " + currTemp + "°F");
           $("#currentWind").append("Wind: " + currWind + " mph");
           $("#currentHumidity").append("Humidity: " + currHumid + "%");
