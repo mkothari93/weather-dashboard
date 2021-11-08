@@ -7,15 +7,15 @@ var setCitiesSearched = function () {
 };
 
 //Function for getting cities from local storage
-var getCitiesSearched = function (){
+var getCitiesSearched = function () {
   var storedCities = localStorage.getItem("citySearch")
   if (storedCities) {
     recentCitySearch = JSON.parse(storedCities);
   }
-  
+
   //Appends every city from local storage under cities searched
-  for (var i=0; i < recentCitySearch.length; i++) {
-      $("#citiesSearched").append("<p><button class='btn'>" + recentCitySearch[i] + "</button></p>");
+  for (var i = 0; i < recentCitySearch.length; i++) {
+    $("#citiesSearched").append("<p><button class='btn'>" + recentCitySearch[i] + "</button></p>");
   }
 };
 
@@ -38,24 +38,24 @@ var getWeather = function () {
 
   //Push city name into recentCitySearch array
   recentCitySearch.push(city);
-  
+
   setCitiesSearched();
 
   //Appends the city name as a button under the search and clear recent cities button
   $("#citiesSearched").append("<p><button class='btn'>" + city + "</button></p>");
   ;
   //API for obtaining longitude and latitude from city provided by user
-  fetch("https://api.positionstack.com/v1/forward?query=" + city + "&access_key=4e1af31119a12431a87582be15b02d15")
+  fetch("https://api.geocod.io/v1.6/geocode?q=" + city + "&api_key=aa7f4c6a6166d8fce4f1668ddc688768471fd68")
     .then(function (response) { return response.json() })
     .then(function (result) {
 
       //Saves the longitude and latitude results from the API response into created variables
-      var lon = result.data[0].longitude;
-      var lat = result.data[0].latitude;
+      var lon = result.results[0].location.lng;
+      var lat = result.results[0].location.lat;
 
       //Saves the city and state results from the API response into created variables
-      var currCity = result.data[0].name;
-      var currState = result.data[0].region_code;
+      var currCity = result.results[0].address_components.city;
+      var currState = result.results[0].address_components.state;
 
       //Variable created for current date
       var currDate = moment().format('L');
@@ -137,14 +137,14 @@ $("#clear").click(function () {
 })
 
 
-$(document).ready(function (){
+$(document).ready(function () {
   getCitiesSearched();
 
   $("#submit").click(function () {
-  //Calls emptyContent function
-  emptyContent();
+    //Calls emptyContent function
+    emptyContent();
 
-  //Calls getWeather function
-  getWeather();
+    //Calls getWeather function
+    getWeather();
   });
-})
+});
