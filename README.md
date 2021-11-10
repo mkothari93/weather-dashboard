@@ -13,7 +13,7 @@ The purpose of this project is to create a Weather Dashboard taking user input o
 * OpenWeather API
 
 ### Website
-
+git@github.com:mkothari93/weather-dashboard.git
 
 ### Image of Website
 ![Blank Weather Dashboard](https://user-images.githubusercontent.com/90233589/140665325-0b1a9551-d98d-4124-89f2-34f52b9e9a79.JPG)
