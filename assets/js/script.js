@@ -39,11 +39,12 @@ var getWeather = function () {
   //Push city name into recentCitySearch array
   recentCitySearch.push(city);
 
+  //Runs setCitiesSearched function to save the city searched into local storage
   setCitiesSearched();
 
   //Appends the city name as a button under the search and clear recent cities button
   $("#citiesSearched").append("<p><button class='btn'>" + city + "</button></p>");
-  ;
+
   //API for obtaining longitude and latitude from city provided by user
   fetch("https://api.geocod.io/v1.6/geocode?q=" + city + "&api_key=aa7f4c6a6166d8fce4f1668ddc688768471fd68")
     .then(function (response) { return response.json() })
@@ -85,7 +86,19 @@ var getWeather = function () {
           $("#currentTemp").append("Temperature: " + currTemp + "°F");
           $("#currentWind").append("Wind: " + currWind + " mph");
           $("#currentHumidity").append("Humidity: " + currHumid + "%");
-          $("#uvIndex").append("UV Index: " + currUV);
+          $("#uvIndex").append("UV Index: ");
+            
+            //If statement to check the UV index value and highlights it the appropriate color
+            if (currUV <= 3) {
+              //Highlight the UV index green -> "success"
+              $("#uvIndex").append("<span class='bg-success'>" + currUV + "</span>")
+            } else if (currUV <= 6) {
+              //Highlight the UV idex yellow -> "warning"
+              $("#uvIndex").append("<span class='bg-warning'>" + currUV + "</span>")
+            } else {
+              //Highlight the UV idex red -> "danger"
+              $("#uvIndex").append("<span class='bg-danger'>" + currUV + "</span>")
+            };
 
           $("#fiveDayForecast").append("5 Day Forecast: ")
 
